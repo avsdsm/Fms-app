@@ -1,0 +1,107 @@
+ <div class="col-md-12">
+    <ul class="breadcrumb">
+        <li><a href="#/organization">{{'label.anchor.organization' | translate}}</a></li>
+        <li><a href="#/assets">{{'label.anchor.manageassets' | translate}}</a></li>
+        <li class="active">{{'label.anchor.createassets' | translate}}</li>
+    </ul>
+	<form name="createassetform" novalidate="" class="form-horizontal well" ng-controller="CreateAssetController"
+	      rc-submit="submit()">
+	    <api-validate></api-validate>
+	    <fieldset>
+	        <legend>{{'label.anchor.createassets' | translate}}</legend>
+	
+	        <div class="form-group">
+	            <label class="control-label col-sm-2" for="assetType">{{ 'label.input.assetType' | translate }}<span
+	                    class="required">*</span></label>
+	
+	            <div class="col-sm-3">
+	                <select chosen="assetTypeDropdowns" name="assetType" id="assetType" ng-model="formData.assetType" class="form-control"
+	                        ng-options="assetTypeDropdown.assetType as assetTypeDropdown.assetType for assetTypeDropdown in assetTypeDropdowns" value="{{office.id}}" required late-Validate>
+	                </select>
+	            </div>
+	            <div class="col-sm-3">
+	                <form-validate valattributeform="createassetform" valattribute="assetType"/>
+	            </div>
+	        </div>
+	
+	        <div class="form-group">
+	            <label class="control-label col-sm-2" for="model">{{ 'label.input.model' | translate }}<span
+	                    class="required">*</span></label>
+	
+	            <div class="col-sm-3">
+	                 <select chosen="modelDropdowns" name="model" id="model" ng-model="formData.model" class="form-control"
+	                        ng-options="modelDropdown.models as modelDropdown.models for modelDropdown in modelDropdowns" value="{{modelDropdown.models}}" required late-Validate>
+	                </select>
+	            </div>
+	            <div class="col-sm-3">
+	                <form-validate valattributeform="createassetform" valattribute="model"/>
+	            </div>
+	        </div>
+	
+	        <div class="form-group">
+	            <label class="control-label col-sm-2" for="assetCode">{{ 'label.input.assetCode' | translate }}<span
+	                    class="required">*</span></label>
+	
+	            <div class="col-sm-3">
+	                <input type="text" id="assetCode" name="assetCode" class="input-small" ng-model="formData.assetCode" class="form-control" required late-Validate/>
+	            </div>
+	            <div class="col-sm-3">
+	                <form-validate valattributeform="createassetform" valattribute="assetCode"/>
+	            </div>
+	        </div>
+	        
+	        <div class="form-group">
+	            <label class="control-label col-sm-2" for="make">{{ 'label.input.make' | translate }}<span
+	                    class="required">*</span></label>
+	
+	            <div class="col-sm-3">
+	                <input type="text" id="make" name="make" class="input-small" ng-model="formData.make" class="form-control" required late-Validate/>
+	            </div>
+	            <div class="col-sm-3">
+	                <form-validate valattributeform="createassetform" valattribute="make"/>
+	            </div>
+	        </div>
+	        
+	        <div class="form-group">
+	            <label class="control-label col-sm-2" for="purchaseValue">{{ 'label.input.purchaseValue' | translate }}<span
+	                    class="required">*</span></label>
+	
+	            <div class="col-sm-3">
+	                <input type="text" id="purchaseValue" name="purchaseValue" class="input-small" ng-model="formData.purchaseValue" class="form-control" required late-Validate/>
+	            </div>
+	            <div class="col-sm-3">
+	                <form-validate valattributeform="createassetform" valattribute="purchaseValue"/>
+	            </div>
+	        </div>
+	        
+	        <div class="form-group">
+	            <label class="control-label col-sm-2" for="saleValue">{{ 'label.input.saleValue' | translate }}<span
+	                    class="required">*</span></label>
+	
+	            <div class="col-sm-3">
+	                <input type="text" id="saleValue" name="saleValue" class="input-small" ng-model="formData.saleValue" class="form-control" required late-Validate/>
+	            </div>
+	            <div class="col-sm-3">
+	                <form-validate valattributeform="createassetform" valattribute="saleValue"/>
+	            </div>
+	        </div>
+	        
+	        <div class="form-group">
+	            <label class="control-label col-sm-2" for="assetDescription">{{ 'label.input.assetDescription' | translate }}</label>
+	
+	            <div class="col-sm-3">
+	                <textarea rows="2" ng-model="formData.assetDescription"></textarea>
+	            </div>
+	        </div>
+	
+	        <div class="col-md-offset-3">
+	            <a id="cancel" href="#/assets">
+	                <button type="reset" class="btn btn-default">{{'label.button.cancel'| translate}}</button>
+	            </a>
+	            <button id="save" type="submit" class="btn btn-primary" has-permission='CREATE_ASSETS'>{{'label.button.save'| translate}}</button>
+	        </div>
+	    </fieldset>
+	</form>
+</div>
+
+   

@@ -1,0 +1,32 @@
+<div class="col-md-12" ng-controller="AssetController">
+    <ul class="breadcrumb">
+        <li><a href="#/organization">{{'label.anchor.organization' | translate}}</a></li>
+        <li class="active">{{'label.anchor.manageassets' | translate}}</li>
+    </ul>
+    <a href="#/createasset" class="btn btn-primary pull-right" has-permission='CREATE_ASSET'><i class="icon-plus icon-white"></i>{{'label.anchor.createassets' | translate }}</a>
+    <input ng-autofocus="true" ng-model="filterText" type="text" ng-keyup="onFilter()" class="form-control" placeholder="{{'label.input.filterbyname' | translate}}">
+	<table class="table">
+        <thead>
+            <tr class="graybg">
+                <th>{{ 'label.heading.assetCode' | translate }}</th>
+                <th>{{ 'label.heading.assetDescription' | translate }}</th>
+                <th>{{ 'label.heading.assetType' | translate }}</th>
+                <th>{{ 'label.heading.model' | translate }}</th>
+                <th>{{ 'label.heading.purchaseValue' | translate }}</th>
+                <th>{{ 'label.heading.saleValue' | translate }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="pointer-main" ng-repeat="asset in assets | filter:filterText">
+                <td class="pointer" data-ng-click="routeTo(asset.id)">{{asset.assetCode}}</td>            
+                <td class="pointer" data-ng-click="routeTo(asset.id)">{{asset.assetCode}}</td>        
+                <td class="pointer" data-ng-click="routeTo(asset.id)">{{asset.assetDescription}}</td>    
+                <td class="pointer" data-ng-click="routeTo(asset.id)">{{asset.assetType}}</td>   
+                <td class="pointer" data-ng-click="routeTo(asset.id)">{{asset.model}}</td>  
+                <td class="pointer" data-ng-click="routeTo(asset.id)">{{asset.purchaseValue}}</td>  
+                <td class="pointer" data-ng-click="routeTo(asset.id)">{{asset.saleValue}}</td>  
+                          
+            </tr>
+        </tbody>
+    </table>
+</div>
